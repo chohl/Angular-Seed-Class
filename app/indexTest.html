@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-ng-app="demoApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App Routing</title>
+  
+</head>
+<body>
+   <div> 
+		<h3>Adding Module Configuration and Routing</h3>
+    <!-- ng-view handles loading partials into it based upon routes -->
+		<div data-ng-view=""></div>
+	</div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+	
+	
+	<script>
+   var demoApp = angular.module('demoApp', ['ngRoute']);
+
+	 demoApp.config(function($routeProvider){
+		
+	   $routeProvider
+				.when('/view3',  
+				{ controller: 'SimpleController',
+					templateUrl: '/partials/View3.html'
+				})
+				.when('/view4', 
+				{  controller: 'SimpleController',
+					 templateUrl: '/partials/View4.html'
+				})
+				.otherwise({ redirectTo: '/' });
+				});
+			
+	 demoApp.controller('SimpleController', function($scope) {
+		$scope.customers = [
+			{name:'Dave Smith', city:'Toledo'},
+			{name:'Dave Walsh', city:'Dublin'},
+			{name:'Napur Singh', city:'Mumbai'},
+			{name:'Heide Heck', city:'Birmingham'}
+		];
+		$scope.addCustomer = function() {
+			$scope.customers.push(
+				{
+					name: $scope.newCustomer.name, 
+					city: $scope.newCustomer.city 
+				});
+    } ;
+	});
+	 
+ </script>
+	
+</body>
+</html>
