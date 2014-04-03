@@ -1,4 +1,26 @@
 <p>This is the partial for view 2.</p>
+<div>
+	
+	<table border="1"  style="width:300px">
+	<thead>
+			<tr>
+				<th WIDTH="75"; style = "padding:5px">MAKE</th>      
+				<th WIDTH="75"; style=>MODEL</th>
+				<th WIDTH="50"; style="padding:5px">YEAR</th>
+				<th WIDTH="100"; style="color: red"><em>PRICE</em></th>
+			</tr>	
+		</thead>	
+		<tbody ng-repeat="car in cars">
+			<tr>
+				<td><span>{{car.make}}</span></td>
+				<td><span>{{car.model}} </span></td>
+				<td><span>{{car.year}}</span></td>
+				<td><span>{{car.price | currency : $}}</span></td>
+			<tr/>			
+		</tbody>
+	</table>
+</div>
+
 <p>
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
