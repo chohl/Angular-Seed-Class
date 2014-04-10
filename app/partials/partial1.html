@@ -4,30 +4,30 @@
 	<table style="border-collapse:collapse; ">
 		<tbody>
 			<tr>
-				<td><label>Make:</label></td>
-				<td><input type = "text" ng-model="car.make"/></td>
-				<td><span> {{car.make}} </span></td>
+				<td><label id = "lblMake">Make:</label></td>
+				<td><input id = "edMake" type = "text" ng-model="car.make"/></td>
+				<td><span id = "sMake">{{car.make}} </span></td>
 			<tr/>
 			<tr>
-				<td><label>Model:</label></td>
-				<td><input type = "text" ng-model="car.model"/></td>
-				<td><span> {{car.model}} </span></td>
+				<td><label id = "lblModel">Model:</label></td>
+				<td><input id = "edModel" type = "text" ng-model="car.model"/></td>
+				<td><span id = "sModel"> {{car.model}} </span></td>
 			</tr>
 			<tr>
-				<td><label>Year:</label></td>
-				<td><select ng-model="car.year">
+				<td><label id = "lblYear">Year:</label></td>
+				<td><select id = "edYear" ng-model="car.year">
 					<option value = 2010>2010</option>
 					<option value: 2011>2011</option>
 					<option value: 2012>2012</option>
 					<option value: 2013>2013</option>
 					<option value: 2014>2014</option>
 					</select></td>
-				<td><span>{{car.year}} </span></td> 				
+				<td><span id = "sYear">{{car.year}} </span></td> 				
 			</tr>	
 			<tr>	
-				<td><label>Price:</label></td>
-				<td><input type = "text" ng-model="car.price"/></td>
-				<td><span> {{car.price  | currency : $}}</span></td>
+				<td><label id = "lblPrice">Price:</label></td>
+				<td><input id = "edPrice" type = "text" ng-model="car.price"/></td>
+				<td><span id = "sPrice"> {{car.price  | currency : $}}</span></td>
 			</tr>	
 		</tbody>
 	</table>
