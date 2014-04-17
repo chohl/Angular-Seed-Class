@@ -102,18 +102,15 @@ describe('my app', function() {
 	
 		it('should be able to enter data in the Year edit, edit and span should have the entered value', 
 			function() {	
+				element(by.id('edYear')).sendKeys('2013');
 				
-				element(by.id('edYear')).Option.valueOf('2013').click();
-			
-			htmlElement = element(by.id('edYear'));
-			expect(htmlElement).not.toBe(undefined);
-			expect(htmlElement.getAttribute('value')).toEqual('2013');
-			
-			htmlElement = element(by.id('sYear'));
-			expect(htmlElement).not.toBe(undefined);
-			expect(htmlElement.getText('value')).toEqual('2013');
-
-
+				htmlElement = element(by.id('edYear'));
+				expect(htmlElement).not.toBe(undefined);
+				expect(htmlElement.getAttribute('value')).toEqual('2013');  
+				
+				htmlElement = element(by.id('sYear'));
+				expect(htmlElement).not.toBe(undefined);
+				expect(htmlElement.getText('value')).toEqual('2013'); 
 		});		
   
 
